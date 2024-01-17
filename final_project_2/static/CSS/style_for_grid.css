@@ -1,0 +1,49 @@
+.grid {
+    display: flex;
+    grid-template-columns: repeat(6, 30px);
+    grid-auto-rows: repeat(6, 40px);
+    grid-gap: 50px;
+    margin: 0px auto;
+    width: 70%;
+
+}
+
+.grid > * {
+    /*дизайн*/
+    margin: 2px;
+    align-items: center;
+}
+
+.master_windows input[type=checkbox] {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: -1;
+}
+
+.master_windows input[type=checkbox]:disabled ~ label{
+    opacity: 0.5;
+    cursor: auto;
+    background-color: #fdffcc;
+}
+
+.master_windows label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.master_windows label {
+    /*background: rgba(163, 205, 90, 0.14);*/
+    padding: 10px;
+    background-color: #fdffcc;
+    border: 2px solid #f9ae17;
+    font-family: serif;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.master_windows input[type=checkbox]:checked ~ label {
+    background-color: #f9ae17cc;
+}
+
+
