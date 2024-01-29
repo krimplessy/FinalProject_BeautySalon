@@ -1,0 +1,106 @@
+* {
+   box-sizing: border-box;
+}
+/* body {
+   background: rgba(212, 239, 192, 0.4);
+   margin:30px;
+   font-size:18px;
+} */
+.decor {
+   width: 80%;
+    margin: 20px auto;
+    background-color: #fff3c9db;
+    border: solid 4px #f9ae17;
+    border-radius: 10px;
+}
+
+.checkbox-elem {
+   margin: 0px 5px 0px 30px;
+}
+
+.form-inner {
+   padding: 20px;
+}
+.form-inner summary,input[type="tel"],input[type="text"] {
+   display: block;
+   width: 100%;
+   padding: 0 20px;
+   margin-bottom: 10px;
+   /* background: #E9EFF6; */
+   line-height: 30px; 
+   border-width: 0;
+   border-radius: 20px;
+   font-family: "Times New Roman", Times, serif;
+}
+
+
+.form-inner label,input[type="radio"],input[type="checkbox"] {
+   padding: 0 10px;
+   margin-bottom: 10px;
+   line-height: 30px;
+   border-width: 0;
+   border-radius: 20px;
+   font-family: "Times New Roman", Times, serif;
+}
+
+.form-inner p,.form-inner li {
+   margin-bottom: 10px;
+   line-height: 40px;
+   border-width: 0;
+   border-radius: 20px;
+   font-family: "Times New Roman", Times, serif;
+   line-height: 1.1;
+}
+
+summary:hover{
+    cursor: pointer;
+}
+
+/*Кнопки*/
+input[type="submit"] {
+    /* сверху | справа | снизу | слева */
+    margin: 2em 0 0 0;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.button_1 {
+    /* text-transform: uppercase; */
+    padding: 7px 22px;
+   /* padding: 5px; */
+    /* display: inline-block; */
+    /* border-radius: 100px; */
+    transition: all .2s;
+    margin: 15px auto;
+    cursor: pointer;
+    /* width: 95%; */
+    background-color: #fdffcc;
+    border: solid 2px #f9ae17;
+    border-radius: 20px;
+    font-size: 16px;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    color: #b4810b;
+}
+.button_1:hover {
+   background-color: #f6e194f0;
+   transform: translateY(-3px);
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button_1:active {
+    background-color: #f9ae17cc;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+   .checkbox-elem {
+      margin: 0px 3px 0px 20px;
+   }
+
+   .button_1 {
+      font-size: 14px;
+   }
+}

@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+ }
+
+a {
+    color: darkorange;
+ }
+h1 {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 40px;
+    margin: 15px auto;
+    color: #d19a1a;
+}
+
+h3 {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 32px;
+    margin: 10px auto;
+    color: #b4810b;
+}
+
+h4 {
+    /* text-align: center; */
+    font-family: "Times New Roman", Times, serif;
+    font-size: 26px;
+    margin: 10px auto;
+    color: #b4810b;
+}
+
+h5 {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    margin: 10px auto;
+    color: #b4810b;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: #fdffccca;
+    font-size: 20px;
+    color: #b4810b;
+}
+
+.line {
+    display: flex;
+    width: 100%;
+    background-color: #eb974dd0;
+    align-items: center;
+    height: 3px;
+    margin: 10px auto;
+    opacity: 60%;
+}
+
+/* МЕНЮ */
+.menu {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.menu-item {
+    width: 100%;
+    transition: 0.5s;
+    align-self: center;
+    padding: 8px 0px 0px 0px;
+}
+
+.item-active {
+    background-color: #fff86d;
+    height: 30px;
+}
+
+.menu-item-hidden {
+    visibility: hidden;
+}
+
+
+@media (max-width: 600px) {
+    h1 {
+      text-align: center;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 34px;
+      margin: 15px auto;
+    }
+    h3 {
+      text-align: center;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 26px;
+      margin: 10px auto;
+    }
+    body {
+      font-size: 16px;
+    }
+    .line {
+      height: 1.5px;
+    }
+    .menu {
+      flex-wrap: wrap;
+      transition: 0.5s;
+    }
+    .menu-item {
+      width: 49.9%;
+      padding: 4px 0px 0px 0px;
+    }
+    .item-active {
+        height: 22px;
+    }
+    h4 {
+        font-size: 19px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+  }

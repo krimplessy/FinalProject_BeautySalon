@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Запись в салон красоты «Caramels»</title>
+    <h1>Онлайн-запись в салон красоты&nbsp;&laquo;Caramels&raquo;</h1>
+    <link rel="stylesheet" type="text/css" href="/static/CSS/style_for_menu.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/CSS/frame_style.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+    {% macro render_list(name, relation, masters) %}
+        {% for title in masters %}
+          <details open>
+            <summary id="test"><b>{{ title }}</b></summary>
+            {% set n = len(relation) %}
+            {% for i in range(n) %}
+                {% if relation.iloc[i][2] == title%}
+                      <input class="checkbox-elem" type="checkbox" name={{ name }} value='{{ relation.iloc[i][0] }}' id{{ name }}{{ i }}>
+                      <label for={{ name }}{{ i }}> {{ relation.iloc[i][1] }} </label>
+                      <br>
+                {% endif %}
+            {% endfor %}
+          </details>
+      {% endfor %}
+    {% endmacro %}
+
+  <!-- -------------------------------------------------------------------------- -->
+
+  <!-- Проверка на то, выбрал ли что-то пользователь или нет -->
+  <script>
+    // Функция выполняется при полной загрузке страницы
+    $(document).on('ready', function () {
+        // Получаем все элементы чекбоксов
+        var checkboxes = $("input[type=checkbox]");
+
+        // При отправке формы с id "main"
+        $("#form").on('submit', function (e) {
+            // Устанавливаем начальное значение checker на false
+            var checker = false;
+
+            // Перебираем все найденные чекбоксы
+            checkboxes.each(function () {
+                // Если чекбокс выбран, устанавливаем checker на true
+                if ($(this).prop('checked') == true) {
+                    checker = true;
+                }
+            });
+
+            // Если ни один чекбокс не выбран, отменяем отправку формы и выводим сообщение в консоль
+            if (checker == false) {
+                e.preventDefault();
+                console.log('не выбран ни один чекбокс, форма не отправлена');
+            } else {
+                // Если хотя бы один чекбокс выбран, отправляем форму и выводим сообщение в консоль
+                console.log('выбран хотя бы 1 чекбокс, форма отправлена');
+            }
+        });
+    });
+  </script>
+
+</head>
+<body>
+  <div class="line"></div>
+
+    <div class="menu">
+        <div class="menu-item"><a href={{ url_for("index") }}>Выбор услуги</a></div>
+        <div class="menu-item item-active">Выбор мастера</div>
+        <div class="menu-item menu-item-hidden">Выбор времени</div>
+        <div class="menu-item menu-item-hidden">Подтверждение записи</div>
+    </div>
+
+    <div class="line"></div>
+
+  {% if add_procedure_list %}
+
+    <form id="form" action={{ url_for("masterdatepage") }} method="get" class="decor">
+      <div class="form-inner">
+        <h3>Выберите мастера:</h3>
+          <form class="form">
+            {{ render_list('masters', masters, add_procedure_list) }}
+            <input type="submit" class="button_1" value="Показать">
+          </form>
+      </div>
+    </form>
+  {% else %}
+      Пожалуйста, выберите услуги!
+  {% endif %}
+
+</body>
+</html>
